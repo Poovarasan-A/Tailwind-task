@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Search</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        padding: 6px 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Student Search</h2>
+      <input id="searchInput" type="text" placeholder="Enter Student Name" />
+      <ul id="studentList"></ul>
+    </div>
+  </body>
+  <script>
+    const students = [
+      { name: "Ram", age: 20, grade: "A" },
+      { name: "Gokul", age: 22, grade: "B" },
+      { name: "Hari", age: 19, grade: "C" },
+      { name: "Prasad", age: 21, grade: "B" },
+      { name: "Praveen", age: 23, grade: "A" },
+      { name: "Prasad", age: 23, grade: "A" },
+      { name: "Ramu", age: 22, grade: "B" },
+      { name: "Somu", age: 20, grade: "A" },
+      { name: "Guna", age: 23, grade: "C" },
+      { name: "Gugan", age: 24, grade: "A" },
+      { name: "Venkat", age: 21, grade: "B" },
+      { name: "Ravi", age: 25, grade: "A" },
+    ];
+
+    const searchInput = document.getElementById("searchInput");
+    const studentList = document.getElementById("studentList");
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      const filteredStudents = students.filter((student) =>
+        student.name.toLowerCase().includes(searchTerm)
+      );
+
+      displayStudents(filteredStudents);
+    });
+
+    function displayStudents(filteredStudents) {
+      studentList.innerHTML = "";
+      filteredStudents.forEach((student) => {
+        const li = document.createElement("li");
+        li.textContent = `Name: ${student.name}, Age: ${student.age}, Grade: ${student.grade}`;
+        studentList.appendChild(li);
+      });
+    }
+
+    displayStudents(students);
+  </script>
+</html>

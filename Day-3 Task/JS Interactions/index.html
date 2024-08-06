@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="alertMsg()">Alert</button>
+    <button onclick="promptMsg()">Prompt</button>
+    <button onclick="confirmMsg()">Confirm</button>
+  </body>
+  <script>
+    //alert
+    function alertMsg() {
+      alert("HEY WELCOME");
+    }
+
+    //prompt
+    function promptMsg() {
+      let height = prompt("Enter your height in cm", "In cm");
+      alert(`Your height is ${height} cm`);
+    }
+
+    //Confirm
+    function confirmMsg() {
+      let isAdmin = confirm("Are you an admin?");
+      alert(isAdmin);
+    }
+  </script>
+</html>

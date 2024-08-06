@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Js Array Methods</h1>
+    <p>Open console for output</p>
+  </body>
+  <script>
+    //----------Map method------------
+
+    const numbers = [5, 26, 56, 32, 41, 22, 48, 10];
+
+    const updatedNum = numbers.map((number) => {
+      return number + 20;
+    });
+
+    const updatedNum1 = numbers.map((number) => {
+      return number - 10;
+    });
+
+    console.log(updatedNum);
+    console.log(updatedNum1);
+
+    //-------Filter Method----------
+
+    const evenNum = numbers.filter((number) => {
+      return number % 2 === 0;
+    });
+    console.log("even number is", evenNum);
+
+    //-------Reduce Method------------
+
+    function reduceFunc(result, current) {
+      return result + current;
+    }
+
+    const total = numbers.reduce(reduceFunc);
+    console.log(total);
+
+    //----------Reduce Right Method ----------------
+
+    const newArr = [
+      [1, 2],
+      [3, 4],
+      [5, 6],
+    ];
+
+    console.log(newArr);
+
+    const reduceRghtFunc = (result, current) => result.concat(current);
+    let final = newArr.reduceRight(reduceRghtFunc);
+
+    console.log(final);
+
+    final = newArr.reduce(reduceRghtFunc);
+    console.log(final);
+
+    //----------------- Push Method-------------------
+
+    let queue = ["Ram", "Gokul"];
+
+    console.log(queue);
+
+    queue.push("Ragul");
+
+    console.log(queue);
+
+    //----------------- Pop Method -----------------
+
+    let queue1 = ["Prabu", "Gokul", "Ragul", "Hari"];
+
+    const removedPerson = queue1.pop();
+
+    console.log(queue1);
+
+    //--------------- unshift method -------------
+
+    let queue2 = ["Mani", "Praveen"];
+    console.log(queue2);
+
+    queue2.unshift("Mugil");
+    console.log(queue2);
+
+    //--------------- shift method -------------
+
+    let queue3 = ["kumar", "Akash", "Sathish"];
+    console.log(queue3);
+
+    queue3.shift();
+    console.log(queue3);
+
+    //------------- Slice method ---------------
+
+    const animals = ["bear", "deer", "cat", "dog", "elephant"];
+
+    console.log(animals.slice(2));
+    console.log(animals.slice(1));
+    console.log(animals.slice(2, 4));
+    console.log(animals.slice(-2));
+
+    //------------ Splice method -----------------
+
+    const cars = ["tata", "kia", "toyota", "suzuki"];
+
+    console.log(cars);
+
+    cars.splice(1, 0, "Chevrolet");
+    console.log(cars);
+
+    cars.splice(1, 2, "Lambo");
+    console.log(cars);
+
+    //-------------- concat method ------------------
+
+    const programming = ["Python", "javascript"];
+
+    console.log(programming);
+
+    const updatedProgram = programming.concat(["Java", "Golang"]);
+    console.log(updatedProgram);
+
+    //--------------- sort method ------------------
+
+    const price = [300, 425, 862, 742, 150];
+
+    console.log(price);
+
+    console.log(price.sort());
+
+    //--------------- reverse method --------------
+
+    const numbers5 = [5, 12, 16, 54, 72];
+
+    console.log(numbers5.reverse());
+
+    //----------- some method -----------------
+
+    const numList = [50, 69, 35, 75];
+
+    const value = numList.some((val) => val > 30);
+    console.log(value);
+
+    //------------ every method -------------
+
+    const valueEvery = numList.every((val) => val > 100);
+    console.log(valueEvery);
+
+    //------------- find method -------------
+
+    const findValue = numList.find((val) => val > 60);
+    console.log(findValue);
+
+    //---------- find index method ----------------
+    const findIndexValue = numList.findIndex((val) => val > 30);
+    console.log(findIndexValue);
+
+    //----------- includes method ---------------
+
+    const mixedArr = ["Hello", "RAM", 10, 23];
+
+    console.log(mixedArr.includes(10));
+
+    //------------ last indexof method ---------------
+
+    const ranNumbers = [40, 30, 15, 90, 45, 62];
+
+    console.log(ranNumbers.lastIndexOf(90));
+
+    //----------- at method ----------------
+
+    const ranNumbers1 = [40, 30, 15, 90, 45, 62];
+    console.log(ranNumbers1.at(2));
+
+    //--------- join method --------------
+    const vehicles = ["car", "bus", "bike", "lorry"];
+    console.log(vehicles.join());
+    console.log(vehicles.join("-"));
+    console.log(vehicles.join(""));
+
+    //---------- fill method ---------------
+    const arrayOfNum = [1, 2, 3, 4, 5, 6];
+    console.log(arrayOfNum);
+
+    arrayOfNum.fill(100, 1, 3);
+    console.log(arrayOfNum);
+
+    //-------- flat method -------------
+    const flatArray = [1, [2], 3, [4, [5, 6], 7], 8];
+    console.log(flatArray.flat());
+    console.log(flatArray.flat(1));
+    console.log(flatArray.flat(2));
+    console.log(flatArray.flat(Infinity));
+
+    //----------flat Map method --------------
+    const products = ["shirt,pant", "car,bike", "pen,pencil"];
+    console.log(products);
+    console.log(products.flatMap((a) => a.split(",")));
+
+    //----------- array.from method ----------------
+
+    console.log(Array.from("Bike"));
+    console.log(Array.from([1, 2, 3], (a) => a + 10));
+
+    //----------- array of method -------------
+
+    console.log(Array.of(10));
+    console.log(Array.of(20, 5, 6, true, "hello"));
+
+    //----------- isArray method --------------
+    console.log(Array.isArray([30, "hello", false]));
+    console.log(Array.isArray({ id: 30 }));
+
+    //---------- Date function -------------------
+    console.log(Date.now());
+
+    const date = new Date().getDate();
+    console.log(date);
+
+    const hrs = new Date().getHours();
+    console.log(hrs);
+
+    const month = new Date().getMonth() + 1;
+    console.log(month);
+
+    const year = new Date().getFullYear();
+    console.log(year);
+  </script>
+</html>

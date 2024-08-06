@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .colorStyle {
+        background: #000;
+        color: blueviolet;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click below to change color</h1>
+    <div>
+      <button onclick="addAtrr()">Add color</button>
+      <button onclick="remAtrr()">Remove color</button>
+    </div>
+  </body>
+  <script>
+    function addAtrr() {
+      const color = document.createAttribute("class");
+      color.value = "colorStyle";
+      document.getElementsByTagName("h1")[0].setAttributeNode(color);
+    }
+
+    function remAtrr() {
+      document.getElementsByTagName("h1")[0].removeAttribute("class");
+    }
+  </script>
+</html>
