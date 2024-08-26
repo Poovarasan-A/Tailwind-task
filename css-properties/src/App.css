@@ -1,0 +1,10 @@
+/* w-screen h-screen overflow-x-hidden bg-bg-color lg:px-[7rem] px-[0.5rem] py-[1rem]
+ */
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #030a25;
+  padding: 0 7rem;
+}

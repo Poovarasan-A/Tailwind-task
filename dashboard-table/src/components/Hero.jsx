@@ -87,7 +87,7 @@ const Hero = () => {
   );
 
   return (
-    <section className="w-full h-full flex flex-col py-6 px-14">
+    <section className="w-full h-full flex flex-col py-6 px-14 bg-senary">
       <Stack spacing={2}>
         <Breadcrumbs separator="›" aria-label="breadcrumb">
           <Link underline="hover" key="1" color="inherit" href="/">
@@ -183,12 +183,7 @@ const Hero = () => {
             </TableHead>
             <TableBody>
               {currentData.map((data, index) => (
-                <TableRow
-                  key={index}
-                  sx={{
-                    "&:last-child td, &:last-child th": { border: 0 },
-                  }}
-                >
+                <TableRow key={index}>
                   <TableCell>{index + 1}</TableCell>
                   <TableCell component="th" scope="row">
                     {data.name}
