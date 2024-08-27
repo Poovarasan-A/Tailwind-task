@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.glow-on-focus:focus {
+  border: 1px solid green;
+  box-shadow: 0 0 15px rgba(0, 147, 75, 0.8),
+    inset 0 0 10px rgba(0, 147, 75, 0.8);
+}
+
+.scrollbar-custom::-webkit-scrollbar-button {
+  display: none;
+}
